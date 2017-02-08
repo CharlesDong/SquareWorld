@@ -12,27 +12,18 @@
 
 #include <string>
 
-struct Input
-{
-	bool keys[512];
-	bool keysProc[512];
-	ivec2 cursor;
-	bool buttons[2];
-};
-
 class Game
 {
 private:
 	GLFWwindow * mWindow = nullptr;
-	int mWidth = 0, mHeight = 0;
 
 	int mFps = 0;
 	double mDeltaTime = 0.0;
 	bool mDisplayDebugInfo = false;
 	bool mGameStarted = false;
 	bool mGamePaused = false;
+	bool keysProc[GLFW_KEY_LAST + 1];
 
-	Input mInput;
 	World mWorld;
 	Player mPlayer;
 	SelectFrame mSelectFrame;
@@ -60,22 +51,20 @@ public:
 	void run();
 	void close() const;
 
-	// input getters
-	int getWinWidth() const;
-	int getWinHeight() const;
+	// input
+
+	int getWidth() const;
+	int getHeight() const;
+	ivec2 getCursorPos() const;
 	bool isKeyDown(int key) const;
 	bool isKeyProc(int key) const;
 	bool isKeyDownNotProc(int key) const;
 	bool isMouseDown(int button) const;
 
-	// input setters
-	void setKey(int key, bool state = true);
 	void setKeyProc(int key, bool state = true);
-	const ivec2 & getCursorPos() const;
-	void setCursorPos(int x, int y);
-	void setMouse(int button, bool state = true);
 
-	// other getters
+	// game
+
 	WidgetManager & getWidgets();
 	Menu & getMenu();
 	int menuType() const;

@@ -10,12 +10,12 @@
 #include <sstream>
 
 void keyCallback(GLFWwindow *, int, int, int, int);
-void cursorPosCallback(GLFWwindow *, double, double);
-void mouseButtonCallback(GLFWwindow *, int, int, int);
 
 Game Game::app;
 
 const char * const Version = "0.4.1";
+const int WIDTH = 800;
+const int HEIGHT = 600;
 
 Game::Game()
 {
@@ -52,21 +52,17 @@ void Game::init()
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	mWidth = 800;
-	mHeight = 600;
 	std::string title = "Minecraft 2D ";
 	title += Version;
 
 	// create window
-	mWindow = glfwCreateWindow(mWidth, mHeight, title.c_str(), nullptr, nullptr);
+	mWindow = glfwCreateWindow(WIDTH, HEIGHT, title.c_str(), nullptr, nullptr);
 	if (!mWindow)
 		fatals << "Failed to create window using GLFW!\n";
 	glfwMakeContextCurrent(mWindow);
 
 	// set callbacks
 	glfwSetKeyCallback(mWindow, keyCallback);
-	glfwSetCursorPosCallback(mWindow, cursorPosCallback);
-	glfwSetMouseButtonCallback(mWindow, mouseButtonCallback);
 
 	// init GLEW
 	glewExperimental = GL_TRUE;
@@ -74,7 +70,7 @@ void Game::init()
 		fatals << "Failed to init GLEW!\n";
 
 	// OpenGL settings
-	glViewport(0, 0, mWidth, mHeight);
+	glViewport(0, 0, WIDTH, HEIGHT);
 
 	glClearColor(0.0f, 0.75f, 1.0f, 1.0f);		// set the clear color to a light blue color
 	glEnable(GL_BLEND);
@@ -247,64 +243,58 @@ void Game::changePause()
 	mGamePaused = !mGamePaused;
 }
 
-int Game::getWinWidth() const
+// Returns the window width.
+int Game::getWidth() const
 {
-	return mWidth;
+	int res;
+	glfwGetWindowSize(mWindow, &res, nullptr);
+	return res;
 }
 
-int Game::getWinHeight() const
+// Returns the window height.
+int Game::getHeight() const
 {
-	return mHeight;
-}
-
-void Game::setKey(int key, bool state)
-{
-	mInput.keys[key] = state;
+	int res;
+	glfwGetWindowSize(mWindow, nullptr, &res);
+	return res;
 }
 
 // Returns true if the key is down, false otherwise.
 bool Game::isKeyDown(int key) const
 {
-	return mInput.keys[key];
+	return glfwGetKey(mWindow, key) == GLFW_PRESS;
 }
 
 // Returns true if the key is down AND not processed, false otherwise.
 bool Game::isKeyDownNotProc(int key) const
 {
-	return mInput.keys[key] && !mInput.keysProc[key];
+	return isKeyDown(key) && !keysProc[key];
 }
 
 void Game::setKeyProc(int key, bool state)
 {
-	mInput.keysProc[key] = state;
+	keysProc[key] = state;
 }
 
 // Returns true if the key is processed, false otherwise.
 bool Game::isKeyProc(int key) const
 {
-	return mInput.keysProc[key];
+	return keysProc[key];
 }
 
-const ivec2 & Game::getCursorPos() const
+// Returns the cursor position (relatived to the bottom-left corner of the window).
+ivec2 Game::getCursorPos() const
 {
-	return mInput.cursor;
-}
-
-void Game::setCursorPos(int x, int y)
-{
-	mInput.cursor.x = x;
-	mInput.cursor.y = y;
+	dvec2 pos;
+	glfwGetCursorPos(mWindow, &pos.x, &pos.y);
+	pos.y = getHeight() - pos.y - 1.0;
+	return ivec2(pos);
 }
 
 // Returns true if the mouse button is down, false otherwise.
 bool Game::isMouseDown(int button) const
 {
-	return mInput.buttons[button];
-}
-
-void Game::setMouse(int button, bool state)
-{
-	mInput.buttons[button] = state;
+	return glfwGetMouseButton(mWindow, button) == GLFW_PRESS;
 }
 
 WidgetManager & Game::getWidgets()
@@ -353,26 +343,6 @@ void keyCallback(GLFWwindow * window, int key, int scancode, int action, int mod
 {
 	if (key == GLFW_KEY_UNKNOWN)		// unknown key
 		return;
-	if (action == GLFW_PRESS)
-		App.setKey(key, true);
 	else if (action == GLFW_RELEASE)
-	{
-		App.setKey(key, false);
 		App.setKeyProc(key, false);
-	}
-}
-
-void cursorPosCallback(GLFWwindow * window, double xpos, double ypos)
-{
-	App.setCursorPos((int)xpos, App.getWinHeight() - (int)ypos);
-}
-
-void mouseButtonCallback(GLFWwindow * window, int button, int action, int mods)
-{
-	if (button > GLFW_MOUSE_BUTTON_RIGHT)	// other buttons
-		return;
-	if (action == GLFW_PRESS)
-		App.setMouse(button, true);
-	else if (action == GLFW_RELEASE)
-		App.setMouse(button, false);
 }

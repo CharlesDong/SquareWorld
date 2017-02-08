@@ -69,8 +69,8 @@ void World::render(const dvec2 & off) const
 	int yMin, yMax;
 	xMin = max(int(off.x), 0);
 	yMin = max(int(off.y), 0);
-	xMax = min(int(off.x + App.getWinWidth() / BLOCKSIZE), 49);
-	yMax = min(int(off.y + App.getWinHeight() / BLOCKSIZE), 23);
+	xMax = min(int(off.x + App.getWidth() / BLOCKSIZE), 49);
+	yMax = min(int(off.y + App.getHeight() / BLOCKSIZE), 23);
 
 	int idPrev = -1;
 	Renderer::setSize(dvec2(1.0, 1.0));
