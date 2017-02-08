@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\common">
+      <UniqueIdentifier>{bbeba232-f09a-4a43-881e-035743254851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\gui">
+      <UniqueIdentifier>{e182b0c1-1df2-4643-814c-44feab6c16be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\main">
+      <UniqueIdentifier>{224d9228-d4d5-4978-9caa-0f91fed69a21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\player">
+      <UniqueIdentifier>{3421e8b4-b6a2-406e-880e-3a6c76361822}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\renderer">
+      <UniqueIdentifier>{678b2770-2d41-4504-91bd-888c49311c6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\selectframe">
+      <UniqueIdentifier>{f438903b-13b5-495d-b1d1-7b91b51b0a7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\world">
+      <UniqueIdentifier>{841e0c14-71ea-4264-9c6c-e93f59b15d8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\common">
+      <UniqueIdentifier>{14c97199-6a7c-4949-b7e9-03abc8744d58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\gui">
+      <UniqueIdentifier>{40b7e880-4cef-4427-a59c-e567cb5e15b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\main">
+      <UniqueIdentifier>{b42bc794-add6-4c62-86cf-39eb502dd7bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\player">
+      <UniqueIdentifier>{9f6362b3-277a-4673-bf0d-bc2857fadee6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\renderer">
+      <UniqueIdentifier>{ff19b15d-a80d-415e-a14f-3f58a061dcfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\selectframe">
+      <UniqueIdentifier>{f71ad3dd-3f6c-4f55-b4c7-2e5282ac364e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\world">
+      <UniqueIdentifier>{4aa1352b-02c7-48fd-b63c-47ec4d349046}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\common\aabb.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\block_util.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\common.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\function.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\logger.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\resource_manager.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\shader.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\texture.h">
+      <Filter>头文件\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\menu.h">
+      <Filter>头文件\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\widget_manager.h">
+      <Filter>头文件\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gui\widgets.h">
+      <Filter>头文件\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\main\game.h">
+      <Filter>头文件\main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world\world.h">
+      <Filter>头文件\world</Filter>
+    </ClInclude>
+    <ClInclude Include="src\selectframe\select_frame.h">
+      <Filter>头文件\selectframe</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\renderer.h">
+      <Filter>头文件\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\renderer\text_renderer.h">
+      <Filter>头文件\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\player.h">
+      <Filter>头文件\player</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\common\aabb.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\block_util.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\common.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\logger.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\resource_manager.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\shader.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\common\texture.cpp">
+      <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\menu.cpp">
+      <Filter>源文件\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\widget_manager.cpp">
+      <Filter>源文件\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gui\widgets.cpp">
+      <Filter>源文件\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main\game.cpp">
+      <Filter>源文件\main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main\main.cpp">
+      <Filter>源文件\main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world\world.cpp">
+      <Filter>源文件\world</Filter>
+    </ClCompile>
+    <ClCompile Include="src\selectframe\select_frame.cpp">
+      <Filter>源文件\selectframe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\renderer.cpp">
+      <Filter>源文件\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\renderer\text_renderer.cpp">
+      <Filter>源文件\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\player.cpp">
+      <Filter>源文件\player</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
