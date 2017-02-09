@@ -28,7 +28,7 @@ You can download all versions of the game (since this project was built) from Re
 ## 注意事项 / Notice
 
 1. 目前本游戏只能在Windows上运行 / The game is currently Windows only.
-2. 如果未安装VS2015，请从Microsoft官方网站上安装VS2015运行库（ 链接：https://www.microsoft.com/zh-cn/download/details.aspx?id=48145 ） / If you haven't installed Visual Studio 2015 Runtime Library (VS2015 for short), please install VS2015 Runtime Library from the official website of Microsoft (link: https://www.microsoft.com/zh-cn/download/details.aspx?id=48145).
+2. 如果未安装VS2015，请从Microsoft官方网站上安装VS2015运行库（ 链接：https://www.microsoft.com/zh-cn/download/details.aspx?id=48145 ） / If you haven't installed VS2015 Runtime Library, please install VS2015 Runtime Library from the official website of Microsoft (link: https://www.microsoft.com/zh-cn/download/details.aspx?id=48145).
 
 
 
