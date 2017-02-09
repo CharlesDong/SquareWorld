@@ -22,8 +22,8 @@ You can download all versions of the game (since this project was built) from Re
 
 ### 鼠标 / Mouse
 
-* 左键破坏方块 / Left button to destroy a block
-* 右键放置方块 / Right button to place a block
+* 左键破坏方块 / Left button to destroy a block.
+* 右键放置方块 / Right button to place a block.
 
 ## 注意事项 / Notice
 
